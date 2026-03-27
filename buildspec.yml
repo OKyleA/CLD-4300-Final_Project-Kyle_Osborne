@@ -15,4 +15,4 @@ phases:
 
   post_build:
     commands:
-      - cd my-hugo-site && aws s3 sync public/ s3://cld4300-kyle-osborne-hugo --delete
+      - aws s3 sync my-hugo-site/public/ s3://cld4300-kyle-osborne-hugo --delete
