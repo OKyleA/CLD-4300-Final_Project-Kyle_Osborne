@@ -3,10 +3,10 @@ version: 0.2
 phases:
   install:
     commands:
-      - wget https://github.com/gohugoio/hugo/releases/download/v0.159.1/hugo_extended_0.159.1_Linux-64bit.tar.gz
-      - tar -xzf hugo_extended_0.159.1_Linux-64bit.tar.gz
+      - wget https://github.com/gohugoio/hugo/releases/download/v0.159.1/hugo_extended_0.159.1_Linux-64bit.tar.gz -O hugo.tar.gz
+      - tar -xzf hugo.tar.gz
       - sudo mv hugo /usr/local/bin/
-      - rm -f hugo_extended_0.159.1_Linux-64bit.tar.gz LICENSE README.md
+      - rm -f hugo.tar.gz LICENSE README.md
       - hugo version
 
   build:
