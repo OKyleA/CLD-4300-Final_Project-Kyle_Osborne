@@ -13,7 +13,7 @@ phases:
       - echo "Starting Hugo build..."
       - cd my-hugo-site
       - ls -la
-      - hugo --gc --minify --verbose
+      - hugo --gc --minify --logLevel info
       - echo "Hugo build finished. Checking public folder:"
       - ls -la public/ || echo "public/ folder missing!"
 
