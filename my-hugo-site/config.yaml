@@ -1,0 +1,4 @@
+baseURL: 'https://example.com/'  # We'll update this later with your S3 URL
+languageCode: 'en-us'
+title: 'My CLD-4300 Hugo Site'
+theme: 'ananke'

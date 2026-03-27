@@ -1,0 +1,13 @@
+baseURL: 'https://example.com/'   # We will change this later to your S3 URL
+languageCode: 'en-us'
+title: 'CLD-4300 Final Project - Kyle Osborne'
+theme: 'ananke'
+
+# Optional: Basic menu and params for Ananke theme
+menu:
+  main:
+    - name: Home
+      url: '/'
+      weight: 1
+params:
+  description: 'Hugo Static Site with AWS Continuous Deployment'
