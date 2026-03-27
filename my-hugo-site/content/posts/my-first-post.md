@@ -5,3 +5,7 @@ title: 'My First Post'
 ---
 
 This site is now automatically deployed with AWS CodeBuild!
+
+This is my CLD-4300 final project using Hugo + AWS S3 + CodeBuild continuous deployment.
+
+**Video demo update successful - March 27, 2026**
