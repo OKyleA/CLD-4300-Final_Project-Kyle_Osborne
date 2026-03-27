@@ -7,12 +7,9 @@ phases:
       - tar -xzf hugo.tar.gz
       - sudo mv hugo /usr/local/bin/
       - rm -f hugo.tar.gz LICENSE README.md
-      - hugo version
 
   build:
     commands:
-      - cd my-hugo-site && hugo --gc --minify
-
-  post_build:
-    commands:
-      - aws s3 sync my-hugo-site/public/ s3://cld4300-kyle-osborne-hugo --delete
+      - cd my-hugo-site
+      - hugo --gc --minify
+      - aws s3 sync public/ s3://cld4300-kyle-osborne-hugo --delete
