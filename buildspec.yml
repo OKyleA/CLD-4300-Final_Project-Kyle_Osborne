@@ -11,8 +11,10 @@ phases:
 
   build:
     commands:
+      - cd my-hugo-site
       - hugo --gc --minify
 
   post_build:
     commands:
+      - cd my-hugo-site
       - aws s3 sync public/ s3://cld4300-kyle-osborne-hugo --delete
