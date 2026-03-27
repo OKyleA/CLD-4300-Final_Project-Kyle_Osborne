@@ -3,27 +3,14 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Installing Hugo Extended v0.152.2..."
-      - curl -L -o /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.152.2/hugo_extended_0.152.2_linux-amd64.deb
-      - dpkg -i /tmp/hugo.deb
+      - wget -q https://github.com/gohugoio/hugo/releases/download/v0.159.1/hugo_extended_0.159.1_Linux-64bit.tar.gz -O hugo.tar.gz
+      - tar -xzf hugo.tar.gz
+      - sudo mv hugo /usr/local/bin/
+      - rm -f hugo.tar.gz LICENSE README.md
       - hugo version
 
   build:
     commands:
-      - echo "Starting Hugo build..."
       - cd my-hugo-site
-      - ls -la
-      - hugo --gc --minify --logLevel info
-      - echo "Hugo build finished. Checking public folder:"
-      - ls -la public/ || echo "public/ folder missing!"
-
-  post_build:
-    commands:
-      - echo "Deploying to S3..."
-      - aws s3 sync my-hugo-site/public/ s3://cld4300-kyle-osborne-hugo --delete --acl public-read
-      - echo "Deployment completed."
-
-artifacts:
-  files:
-    - '**/*'
-  base-directory: my-hugo-site/public
+      - hugo --gc --minify
+      - aws s3 sync public/ s3://cld4300-kyle-osborne-hugo --delete
